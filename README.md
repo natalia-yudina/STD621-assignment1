@@ -1,2 +1,2 @@
 # Maori culture
-A repository to perfom Assignment1 STD621 Internet Programming
+A repository to perform Assignment1 STD621 Internet Programming
