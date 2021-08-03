@@ -1,0 +1,207 @@
+<!-- STD621 Internet Programming Assignment-1 s00009622 Natalia Iudina 08.03.2021 -->
+
+<!-- Bootstrap 4 uses HTML elements and CSS properties that require the HTML5 doctype (<!DOCTYPE html>)-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Māori culture</title>
+  <meta charset="utf-8">
+  <!-- To ensure proper rendering and touch zooming -->
+  <!-- width=device-width - sets the width of the page to follow the screen-width of the device -->
+  <!-- initial-scale=1 - sets the initial zoom level when the page is first loaded by the browser -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap files begin -->
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  <!-- Bootstrap 4 use jQuery and Popper.js for JavaScript components (like modals, tooltips, popovers etc).-->
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <!-- Popper JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- Bootstrap files end -->
+
+  <!-- external CSS -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- external JS -->
+  <script type="text/javascript" src="validate.js"></script>
+
+  <!-- jQuery -->
+  <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
+
+  <!--A navigation menu jQuery begin-->
+  <script>
+    // "$(document).ready(function(){})" is the same as "$(function (){})"
+    // drop down
+    $(function () {
+      $('ul.parent > li').hover(function () {
+        $(this).find('ul.child').show(200);
+      }, function () {
+        $(this).find('ul.child').hide(200);
+      });
+    });
+
+    // get highlighted
+    $(document).ready(function () {
+      $("header a").hover(function () {
+        $(this).css("text-decoration", "underline");
+        $(this).css("color", "rgba(59, 55, 55, 40%)");
+      },
+        function () {
+          $(this).css("text-decoration", "none");
+          $(this).css("color", "rgb(59, 55, 55)");
+        });
+    });
+
+  </script>
+  <!--A navigation menu jQuery end-->
+</head>
+
+<body>
+
+  <header>
+    <div class="container">
+      <a id="header-title" href="index.html">Māori culture</a>
+      <!--A navigation menu HTML begin-->
+      <nav id="navigation" class="topnav ">
+        <ul id="header-nav" class="parent">
+          <li><a href="book_a_tour.html">Learn&nbspmore</a></li>
+          <li class="dropdown"><a href="#">About</a>
+            <ul class="child">
+              <li><a href="#">History</a></li>
+              <li><a href="#">Gallery</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <!--A navigation menu HTML end-->
+  </header>
+
+  <div class="mainScreen">
+    <h2 class="introText">
+      Māori culture is an integral part of life in New Zealand,
+      influencing everything from cuisine to customs, and language.
+    </h2>
+  </div>
+  <!-- Bootstrap class="container" - set the maximum width -->
+  <!-- Bootstrap 4 requires a containing element to wrap site contents. -->
+  <!-- .container class provides a responsive fixed width container -->
+  <!-- its width (max-width) will change on different screen sizes -->
+  <!-- By default, containers have 15px left and right padding, with no top or bottom padding. -->
+  <div class="container content">
+    <article>
+      <!--text area begin-->
+      <p>Māori are the tangata whenua, the indigenous people, of New Zealand.
+        They came here more than 1000 years ago from their mythical Polynesian homeland of Hawaiki.
+        Today, one in seven New Zealanders identify as Māori.
+        Their history, language and traditions are central to New Zealand’s identity.
+      </p>
+      <p>The long and intriguing story of the origins of the indigenous Maori people can be traced
+        back to the 13th century, the mythical homeland Hawaiki, Eastern Polynesia.
+        Due to centuries of isolation, the Maori established a distinct society with characteristic art,
+        a separate language and unique mythology.</p>
+      <br>
+      <h4>Māori dance (Hari)</h4>
+      <p>"We perform haka as an expression of pride," says Karl Johnstone.
+        Kapa haka, a traditional Māori posture dance, "was about not only intimidating the opponents,
+        but it was about how do we actually prevent degenerating into a battle?" he says.
+        "Haka is all about the expression of your inner energy. The shaking of the hands," says Johnstone,
+        "that’s an expression of our life force … it’s showing that there’s an energy within you."
+        <br><br>
+        Watch New Zealand’s Tuku Iho Living Legacy perform kapa haka at the Smithsonian National Museum
+        of Natural History.
+      </p>
+      <!--text area end-->
+      <!--a video embedded in the page begin-->
+      <div class="embed-responsive embed-responsive-16by9">
+        <!--video responsive design using bootstrap-->
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/G_OMxvhc358" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </div>
+      <!--a video embedded in the page end-->
+    </article>
+  </div>
+  <div class="container">
+    <h2>Contact us</h2>
+    <div class="details">
+      <!--a ‘Contact Us’ form begin-->
+      <form id="questions" class="form-horizontal" name="questions" onsubmit="return(validate());" action="">
+        <!-- Bootstrap class "form-group" for a form and "form-control" for elements -->
+        <!-- First Name -->
+        <div class="form-group">
+          <label class="control-label col-md-3" for="textFName">First Name:</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control col-lg-7" id="textFName" name="textFName"
+              placeholder="Enter first name">
+          </div>
+        </div>
+        <!-- Last Name -->
+        <div class="form-group">
+          <label class="control-label col-md-3" for="textLName">Last Name:</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control col-lg-7" id="textLName" name="textLName"
+              placeholder="Enter last name">
+          </div>
+        </div>
+        <!-- Email -->
+        <div class="form-group">
+          <label class="control-label col-md-3" for="textEmail">Email:</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control col-lg-7" id="textEmail" name="textEmail" placeholder="Enter email">
+          </div>
+        </div>
+        <!-- Contact number -->
+        <div class="form-group">
+          <label class="control-label col-md-3" for="textPhone">Contact number:</label>
+          <div class="col-sm-10">
+            <input type="tel" class="form-control col-lg-7" id="textPhone" name="textPhone"
+              placeholder="Enter phone number">
+          </div>
+        </div>
+        <!-- Message -->
+        <div class="form-group">
+          <label class="control-label col-md-3" for="message">Your message:</label>
+          <div class="col-sm-10">
+            <textarea class="form-control col-lg-7" name="message" id="message" cols="30" rows="5"
+              placeholder="Enter your message"></textarea>
+          </div>
+        </div>
+        <br>
+
+        <!-- Button Submit -->
+        <div class="form-group">
+          <div class="col-md-3 text-right">
+            <button type="submit" class="btn btn-block  btn-secondary  btn-md">Submit</button>
+          </div>
+        </div>
+
+        <!-- Button Reset -->
+        <div class="form-group">
+          <div class="col-md-3 text-right">
+            <button type="button" class="btn btn-block  btn-secondary  btn-md" onclick="return(reset());">Reset</button>
+          </div>
+        </div>
+
+    </div>
+    </form>
+  </div>
+  <footer class="panel-footer">
+    <div class="container">
+      STD621 Internet Programming Assignment-1 s00009622 Natalia Iudina
+    </div>
+  </footer>
+
+</body>
+</html>

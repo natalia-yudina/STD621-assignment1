@@ -1,0 +1,275 @@
+<!-- STD621 Internet Programming Assignment-1 s00009622 Natalia Iudina 08.03.2021 -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Book a tour</title>
+  <meta charset="utf-8">
+  <!--to be responsive-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap files begin -->
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  <!-- Bootstrap 4 use jQuery and Popper.js for JavaScript components (like modals, tooltips, popovers etc).-->
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <!-- Popper JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- Bootstrap files end -->
+
+  <!--external CSS-->
+  <link rel="stylesheet" href="styles.css">
+
+  <!--external JS-->
+  <script type="text/javascript" src="validate.js"></script>
+
+  <!-- jQuery -->
+  <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
+  <!--A navigation menu jQuery begin-->
+  <script>
+    $(function () {
+      $('ul.parent > li').hover(function () {
+        $(this).find('ul.child').show(200);
+      }, function () {
+        $(this).find('ul.child').hide(200);
+      });
+    });
+
+    $(document).ready(function () {
+      $("header a").hover(function () {
+        $(this).css("text-decoration", "underline");
+        $(this).css("color", "rgba(59, 55, 55, 40%)");
+      },
+        function () {
+          $(this).css("text-decoration", "none");
+          $(this).css("color", "rgb(59, 55, 55)");
+        });
+    });  
+  </script>
+  <!--A navigation menu jQuery end-->
+
+</head>
+
+<body class="book_a_tourPage">
+
+  <header>
+    <div class="container">
+      <a id="header-title" href="index.html">Māori culture</a>
+      <!--A navigation menu HTML begin-->
+      <nav id="navigation" class="topnav">
+        <ul id="header-nav" class="parent">
+          <li><a href="book_a_tour.html">Learn&nbspmore</a></li>
+          <li class="dropdown"><a href="#">About</a>
+            <ul class="child">
+              <li><a href="#">History</a></li>
+              <li><a href="#">Gallery</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <!--A navigation menu HTML end-->
+    </div>
+  </header>
+
+
+  <section class="learnMore">
+    <div class="container">
+      <br>
+      <h2>Pakiwaitara</h2>
+      <p>Defining aspects of Maori traditional culture include art, dance, legends, tattoos and community.
+        While the arrival of European colonists in the 18th century had a profound impact on the Maori way of life,
+        many aspects of traditional society have survived into the 21st century.
+      </p>
+      <br>
+    </div>
+  </section>
+
+  <div class="container">
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a class="nav-link active" data-toggle="tab" href="#home">Book a tour</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#menu1">Whakairo</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#menu2">Weweru</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#menu3">Papakupu</a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div id="home" class="container tab-pane active">
+      <div class="container">
+
+        <h3>Fill the payment form to book a tour</h3>
+        <div class="details">
+          <!--a ‘Contact Us’ form begin-->
+          <form id="payment" name="payment" action="" onsubmit="return(validatePayment(this));">
+            <!-- Name -->
+            <div class="form-group">
+              <div class="col-sm-10">
+                <label for="textName">Name:</label>
+                <input type="text" class="form-control col-lg-7" id="textName" name="textName" placeholder="Enter Name">
+              </div>
+            </div>
+            <!-- Address -->
+            <div class="form-group">
+              <div class="col-sm-10">
+                <label for="textAddress">Address:</label>
+                <input type="text" class="form-control col-lg-7" id="textAddress" name="textAddress" placeholder="Enter Address">
+              </div>
+            </div>
+            <!-- Email -->
+            <div class="form-group">
+              <div class="col-sm-10">
+                <label for="textEmail">Email:</label>
+                <input type="text" class="form-control col-lg-7" id="textEmail" name="textEmail" placeholder="Enter Email">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-10">
+                <label for="textCreditCard">Credit card number:</label>
+                <input type="text" class="form-control col-lg-7" id="textCreditCard" name="textCreditCard" placeholder="XXXX XXXX XXXX XXXX">
+              </div>
+            </div>
+            <!-- Type of credit card -->
+            <fieldset>
+              <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" class="custom-control-input" id="inMastercard" name="cardType" value="mastercard">
+                <label class="custom-control-label" for="inMastercard">Mastercard</label>
+              </div>
+              <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" class="custom-control-input" id="inVisa" name="cardType" value="visa">
+                <label class="custom-control-label" for="inVisa">Visa</label>
+              </div>
+              <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" class="custom-control-input" id="inAmEx" name="cardType" value="amEx">
+                <label class="custom-control-label" for="inAmEx">AmEx</label>
+              </div>
+            </fieldset>
+            <!-- Terms and conditions -->
+            <fieldset>
+              <div class="custom-control custom-checkbox mb-3 mt-3">
+                <input type="checkbox" class="custom-control-input" id="inCheck" name="inCheck">
+                <label class="custom-control-label" for="inCheck">I have read the terms and conditions</label>
+              </div>
+            </fieldset>
+
+            <!-- Button Submit -->
+            <div class="form-group">
+              <div class="col-md-3 text-right">
+                <button type="submit" class="btn btn-block  btn-secondary  btn-md">Submit</button>
+              </div>
+            </div>
+
+            <!-- Button Reset -->
+            <div class="form-group">
+              <div class="col-md-3 text-right">
+                <button type="button" class="btn btn-block  btn-secondary  btn-md"
+                  onclick="return(reset());">Reset</button>
+              </div>
+            </div>
+
+          </form>
+        </div>
+      </div>
+
+    </div>
+    
+
+    <div id="menu1" class="container tab-pane fade">
+      <h3>Whakairo (Māori traditional art of carving in wood)</h3>
+      <p>The visual art of the Maoris is in four forms: tattooing, weaving, carving, and painting.
+      </p>
+      <p>Even though some people have found Maori carvings to be extreme,
+        there is no denying that they are courageous and true when it comes to expressing themselves in the form of art.
+        Their carvings are done on stones, trees, and bones.
+      </p>
+      <!-- Photo Grid -->
+      <div class="row">
+        <div class="column">
+          <img src="/images/box3.jpg" style="width:100%">
+          <img src="/images/box8.jpg" style="width:100%">
+        </div>
+        <div class="column">
+          <img src="/images/box1.jpg" style="width:100%">
+          <img src="/images/box6.jpg" style="width:100%">
+        </div>
+        <div class="column">
+          <img src="/images/box6.jpg" style="width:100%">
+          <img src="/images/box5.jpg" style="width:100%">
+
+        </div>
+      </div>
+    </div>
+
+    <div id="menu2" class="container tab-pane fade">
+      <h3>Weweru (Dress)</h3>
+      <p>Traditionally, Māori made their clothes and adornments from native plants, and bird and animal skins.
+        There was a great variety of garments, including many kinds of cloaks
+        Clothing, adornments and even hairstyles showed a lot about a person’s status, and fine clothes could enhance
+        mana.</p>
+      <img src="/images/dress.jpg" style="width:100%">
+      <p>The weaving technique for most rain capes and cloaks was whatu aho patahi,
+        single-pair twining, which enabled faster construction. Materials included harakeke (flax),
+        kiekie, tōī, tī kōuka (cabbage-tree leaves), neinei (grass tree), kuta and pīngao (sedges),
+        grasses such as eel grass, wīwī (rushes), pātītī (tussock),
+        and rare materials such as tikumu (mountain daisy leaves) and club moss stems.
+
+      </p>
+    </div>
+    <div id="menu3" class=" tab-pane fade">
+      <section class="dictionary">
+      <div class="container post">
+          <h3>Papakupu (Dictionary)</h3>
+            <p>Learning basic Māori greetings (mihi) is a great place to start.
+              Try using these anywhere you go in New Zealand - quite often, the response will be a wide smile.
+            </p>
+            <h4>How do you say hello in Māori?</h2>
+              <p>Kia ora - Hello</p>
+              <p>Morena - Good morning</p>
+              <p>Tēnā koe - Hello (more formal than kia ora)</p>
+              <p>Kia ora kōrua - Hello to two people</p>
+              <p>Kia ora tātou/kia ora koutou - Hello everyone</p>
+              <p>Tēnā koutou - Greetings to you (said to three or more people)</p>
+              <p>Nau mai, haere mai - Welcome</p>
+              <p>Kei te pēhea koe? - How’s it going?</p>
+              <p>Kei te pai - Good</p>
+              <p>Tino pai - Really good</p>
+              <h4>How do you say goodbye in Māori?</h2>
+                <p>Ka kite anō - See you later</p>
+                <p>Haere rā - Goodbye</p>
+                <h4>How do you say thank you in Māori?</h2>
+                  <p>As well as being used as a greeting, kia ora is also a general expression of appreciation.</p>
+                  <p>Tēnā koe (to one person), tēnā kōrua (to two people), or tēnā koutou (to three or more people)
+                    also means thank you in Māori.</p>
+
+      </div>
+    </section>
+    </div>
+  </div>
+
+  <footer class="panel-footer">
+    <div class="container">
+      STD621 Internet Programming Assignment-1 s00009622 Natalia Iudina
+    </div>
+  </footer>
+
+</body>
+</html>
