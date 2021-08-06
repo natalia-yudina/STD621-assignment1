@@ -1,5 +1,7 @@
 # Maori culture
 A repository to perform Assignment1 STD621 Internet Programming
+<br>
+Demo is available [here](https://natalia-yudina.github.io/STD621-assignment1/)
 
 #### Main page
 - Image as a background
