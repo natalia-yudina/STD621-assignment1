@@ -8,5 +8,13 @@ A repository to perform Assignment1 STD621 Internet Programming
 - "Contact us" form
 
 <p align="center">
-  <img alt="main page" src="screenshots/main_page.png" width = 70%>
+  <img alt="Main Page" src="screenshots/main_page.png" width = 70%>
+</p>
+
+#### Learn more page
+- Tabs
+- Image grid
+
+<p align="center">
+  <img alt="Learn More Page" src="screenshots/Learn_more.png" width = 70%>
 </p>
